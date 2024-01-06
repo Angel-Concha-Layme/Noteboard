@@ -1,0 +1,14 @@
+CREATE TABLE categories(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE notes(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(255) NOT NULL CHECK (status IN ('ACTIVE', 'ARCHIVED')),
+    category_id BIGINT,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+);
