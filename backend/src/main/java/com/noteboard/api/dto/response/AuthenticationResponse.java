@@ -1,2 +1,4 @@
-package com.noteboard.api.dto.response;public class AuthenticationResponse {
+package com.noteboard.api.dto.response;
+
+public record AuthenticationResponse(String token) {
 }
