@@ -1,4 +1,4 @@
-package com.noteboard.api.security;
+package com.noteboard.api.web.security;
 
 
 import com.noteboard.api.config.JwtAuthenticationFilter;
@@ -28,7 +28,7 @@ public class SecurityConfig  {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("")
+                .requestMatchers("/api/auth/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
