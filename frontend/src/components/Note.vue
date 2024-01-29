@@ -37,7 +37,7 @@ export default {
       this.$emit("editar");
     },
     eliminar() {
-      fetch(`https://pacific-diode-406412.rj.r.appspot.com/api/notes/${this.id}`, {
+      fetch(`https://noteboard-411207.rj.r.appspot.com/api/notes/${this.id}`, {
         method: "DELETE",
       })
         .then((response) => {
@@ -55,9 +55,9 @@ export default {
       let url;
       console.log(this.estado);
       if (this.estado === "ACTIVE") {
-        url = `https://pacific-diode-406412.rj.r.appspot.com/api/notes/${this.id}/archive`;
+        url = `https://noteboard-411207.rj.r.appspot.com/api/notes/${this.id}/archive`;
       } else {
-        url = `https://pacific-diode-406412.rj.r.appspot.com/api/notes/${this.id}/active`;
+        url = `https://noteboard-411207.rj.r.appspot.com/api/notes/${this.id}/active`;
       }
 
       console.log(url);

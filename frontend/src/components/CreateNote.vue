@@ -83,8 +83,8 @@ export default {
   methods: {
     saveNote() {
       const url = this.note.id
-        ? `https://pacific-diode-406412.rj.r.appspot.com/api/notes/${this.note.id}`
-        : "https://pacific-diode-406412.rj.r.appspot.com/api/notes";
+        ? `https://noteboard-411207.rj.r.appspot.com/api/notes/${this.note.id}`
+        : "https://noteboard-411207.rj.r.appspot.com/api/notes";
 
       const method = this.note.id ? "PUT" : "POST";
       const noteData = {

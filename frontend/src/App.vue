@@ -60,8 +60,8 @@ export default {
   },
   mounted() {
     Promise.all([
-      fetch("https://pacific-diode-406412.rj.r.appspot.com/api/notes/all"),
-      fetch("https://pacific-diode-406412.rj.r.appspot.com/api/categories/all"),
+      fetch("https://noteboard-411207.rj.r.appspot.com/api/notes/all"),
+      fetch("https://noteboard-411207.rj.r.appspot.com/api/categories/all"),
     ])
       .then((responses) => Promise.all(responses.map((res) => res.json())))
       .then(([notesData, categoriesData]) => {
@@ -96,7 +96,7 @@ export default {
       this.showCreateCategoryModal = state;
     },
     reloadNotes() {
-      fetch("https://pacific-diode-406412.rj.r.appspot.com/api/notes/all")
+      fetch("https://noteboard-411207.rj.r.appspot.com/api/notes/all")
         .then((response) => response.json())
         .then((notes) => {
           this.notes = notes;
@@ -106,7 +106,7 @@ export default {
         });
     },
     reloadCategories() {
-      fetch("https://pacific-diode-406412.rj.r.appspot.com/api/categories/all")
+      fetch("https://noteboard-411207.rj.r.appspot.com/api/categories/all")
         .then((response) => response.json())
         .then((categories) => {
           this.categories = categories.reduce((acc, category) => {
@@ -121,9 +121,9 @@ export default {
     filterNotesByCategory(categoryId) {
       let url;
       if (categoryId) {
-        url = `https://pacific-diode-406412.rj.r.appspot.com/api/notes/category/${categoryId}`;
+        url = `https://noteboard-411207.rj.r.appspot.com/api/notes/category/${categoryId}`;
       } else {
-        url = `https://pacific-diode-406412.rj.r.appspot.com/api/notes/all`;
+        url = `https://noteboard-411207.rj.r.appspot.com/api/notes/all`;
       }
 
       console.log(url);
@@ -138,7 +138,7 @@ export default {
         });
     },
     filterArchivedNotes() {
-      fetch(`https://pacific-diode-406412.rj.r.appspot.com/api/notes/archived`)
+      fetch(`https://noteboard-411207.rj.r.appspot.com/api/notes/archived`)
         .then((response) => response.json())
         .then((notes) => {
           this.notes = notes;
@@ -148,7 +148,7 @@ export default {
         });
     },
     filterActiveNotes() {
-      fetch(`https://pacific-diode-406412.rj.r.appspot.com/api/notes/active`)
+      fetch(`https://noteboard-411207.rj.r.appspot.com/api/notes/active`)
         .then((response) => response.json())
         .then((notes) => {
           this.notes = notes;

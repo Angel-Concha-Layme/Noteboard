@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     saveCategory() {
-      const url = "https://pacific-diode-406412.rj.r.appspot.com/api/categories";
+      const url = "https://noteboard-411207.rj.r.appspot.com/api/categories";
       const data = {
         name: this.categoryName,
       };
